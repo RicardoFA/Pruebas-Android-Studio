@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.desarrollo.actionbardividir.MainActivity">
+    <item
+        android:id="@+id/menu_buscar"
+        android:title="buscar"
+        android:icon="@drawable/ic_action_search"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/menu_cortar"
+        android:title="cortar"
+        android:icon="@drawable/ic_action_cut"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/menu_copiar"
+        android:title="copiar"
+        android:icon="@drawable/ic_action_copy"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/menu_eliminar"
+        android:title="eliminar"
+        android:icon="@drawable/ic_action_delete"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/menu_compartir"
+        android:title="compartir"
+        android:icon="@drawable/ic_action_share"
+        app:showAsAction="ifRoom|withText"/>
+</menu>
