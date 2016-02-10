@@ -1,52 +1,60 @@
 package com.example.desarrollo.spinner;
 
+import android.app.ActionBar;
+import android.app.Notification;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
+
+    TextView texto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        texto = (TextView) findViewById(R.id.texto);
+        ActionBar actionBar = getSupportActionBar();
+
+        //Se crea el spinner
+        SpinnerAdapter spinneradapter = ArrayAdapter.createFromResource(this,R.array.lista, android.R.layout.simple_spinner_dropdown_item);
+        actionBar.setListNavigationCallbacks(spinneradapter, this);
+
+        //Muestra el spinner
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+       switch (itemPosition){
+           case 0:
+           texto.setText("Opcion seleccionada: \n\nLunes");
+               break;
+           case 1:
+               texto.setText("Opcion seleccionada: \n\nMartes");
+               break;
+           case 2:
+               texto.setText("Opcion seleccionada: \n\nMiercoles");
+               break;
+           case 3:
+               texto.setText("Opcion seleccionada: \n\nJueves");
+               break;
+           case 4:
+               texto.setText("Opcion seleccionada: \n\nViernes");
+               break;
+           case 5:
+               texto.setText("Opcion seleccionada: \n\nSabado");
+               break;
+           case 6:
+               texto.setText("Opcion seleccionada: \n\nDomingo");
+               break;
+       }
+        return false;
     }
 }
