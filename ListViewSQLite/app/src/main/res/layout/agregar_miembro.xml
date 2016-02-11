@@ -5,12 +5,19 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"></LinearLayout>
+
     <EditText
         android:id="@+id/et_miembro_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Agregue el nuevo usuario...">
+        android:hint="Agregue el nuevo usuario..."
+        android:layout_marginTop="40dp">
 
         <requestFocus/>
     </EditText>

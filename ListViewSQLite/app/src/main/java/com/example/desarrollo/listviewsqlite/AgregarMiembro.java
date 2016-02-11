@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by Desarrollo on 10/02/2016.
- */
 public class AgregarMiembro extends Activity implements View.OnClickListener {
 
     EditText et;
